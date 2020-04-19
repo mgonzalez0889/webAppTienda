@@ -15,7 +15,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.service.getAll()
       .subscribe(data => {
-        console.log('data',data);
+        console.log('data', data);
         this.products = data;
       });
   }

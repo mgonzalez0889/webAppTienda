@@ -9,7 +9,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: '', //  localhost:4200/ -> /products  -> /products/list
+    path: '',  //  localhost:4200  -> /products -> products/list
     pathMatch: 'full',
     redirectTo: 'products'
   },

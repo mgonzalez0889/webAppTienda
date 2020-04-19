@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ProductListComponent} from './product-list/product-list.component';
 import {ProductsComponent} from './products.component';
+import {ProductListComponent} from './product-list/product-list.component';
+
 
 
 const routes: Routes = [
   {
-    path: '', //  /Products
+    path: '',
     component: ProductsComponent,
     children: [
       {
-        path: '', // /Products -> products/list
+        path: '', // products  -> products/list
         pathMatch: 'full',
         redirectTo: 'list'
       },
       {
-        path: 'list', //  /products/list
+        path: 'list', //  products   -> / products/list
         component: ProductListComponent
       }
     ]
+
   }
 
 ];
