@@ -5,12 +5,13 @@ import { LoginComponent } from './components/login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 
 
 @NgModule({
-  declarations: [LoginComponent, ToolbarComponent ],
+  declarations: [LoginComponent, ToolbarComponent, ConfirmDialogComponent ],
   exports: [
     ToolbarComponent
   ],
