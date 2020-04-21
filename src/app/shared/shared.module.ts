@@ -13,13 +13,15 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 @NgModule({
   declarations: [LoginComponent, ToolbarComponent, ConfirmDialogComponent ],
   exports: [
-    ToolbarComponent
+    ToolbarComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
     RouterModule
-  ]
+  ],
+  entryComponents: [ConfirmDialogComponent]
 })
 export class SharedModule { }

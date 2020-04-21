@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from '../shared/services/products.service';
 import {Product} from '../shared/models/product';
-import {MatSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmDialogComponent} from '../../shared/components/confirm-dialog/confirm-dialog.component';
 import {ConfirmDialogModel} from '../../shared/models/confirm-dialog-model';
 
@@ -22,6 +22,7 @@ export class ProductListComponent implements OnInit {
   }
 
   deleteProduct(product: Product  ) {
+
      const dialogRef = this.dialog.open(ConfirmDialogComponent, {
        maxWidth: '600px',
        data: <ConfirmDialogModel> {
@@ -29,25 +30,33 @@ export class ProductListComponent implements OnInit {
          message: 'Are you sure to delete this product?'
        }
      });
-
+     // Si en el modal la persona presiona YES este retornara un true y se activa el metodo sendDelete
      dialogRef.afterClosed()
-
-
-     this.service.delete(product.id)
-       .subscribe(response => {
-         console.log('Product has been deleted', response);
-          this.loadproduct();
-          this.snackbar.open('Product has been deleted', 'Close', {
-            duration: 3000
-          });
+       .subscribe( result => {
+        if(result) {
+          this.sendDeleteRequest(product);
+        }
        });
   }
 
   private loadproduct() {
+
     this.service.getAll()
       .subscribe(data => {
         console.log('data', data);
         this.products = data;
+      });
+  }
+
+  private sendDeleteRequest(product: Product) {
+
+    this.service.delete(product.id)
+      .subscribe(response => {
+        console.log('Product has been deleted', response);
+        this.loadproduct();
+        this.snackbar.open('Product has been deleted', 'Close', {
+          duration: 3000
+        });
       });
   }
 
