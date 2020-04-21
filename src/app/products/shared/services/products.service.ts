@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {Product} from '../models/product';
 import {HttpClient} from '@angular/common/http';
 
-const PRODUCTS_URL = "http://localhost:3000/products";
+const PRODUCTS_URL = 'http://localhost:3000/products';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +16,19 @@ export class ProductsService {
    return this.httpClient.get<Product[]>(`${PRODUCTS_URL}`);
   }
 
-  addProduct(product: Product  ):Observable<Product> {
-    //products: POST
+  addProduct(product: Product  ): Observable<Product> {
+    // products: POST
     return this.httpClient.post<Product>( `${PRODUCTS_URL}`, product );
   }
 
+  get(id: string  ): Observable<Product> {
+    // /products/id
+    return this.httpClient.get<Product>( `${PRODUCTS_URL}/${id}`);
+  }
+
+  update(product: Product  ): Observable<Product> {
+    // UPDATE /product/id
+    return this.httpClient.put<Product>( `${PRODUCTS_URL}/${product.id}`, product);
+
+  }
 }

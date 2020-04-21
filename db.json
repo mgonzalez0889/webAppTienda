@@ -28,13 +28,12 @@
       "thumbImage": "https://www.forever21.com/images/1_front_330/00311399-02.jpg"
     },
     {
-      "salePrice": 3.96,
-      "price": 9.9,
-      "title": "Holiday Print Beanie",
-      "url": "https://www.forever21.com/us/shop/catalog/product/f21/acc/2000309450",
+      "title": "Test title 2",
       "brand": "ACC",
-      "id": "2000309450",
-      "thumbImage": "https://www.forever21.com/images/1_front_330/00309450-02.jpg"
+      "price": "99.99",
+      "salePrice": 3.96,
+      "thumbImage": "https://www.forever21.com/images/1_front_330/00309450-02.jpg",
+      "id": "2000309450"
     },
     {
       "salePrice": 24.99,
@@ -448,6 +447,14 @@
       "salePrice": "8.99",
       "thumbImage": "https://www.forever21.com/images/1_front_330/00301398-02.jpg",
       "id": "lMkbnDE"
+    },
+    {
+      "title": "",
+      "brand": "",
+      "price": "",
+      "salePrice": "",
+      "thumbImage": "",
+      "id": "LS7je77"
     }
   ]
 }

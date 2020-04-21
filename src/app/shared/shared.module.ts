@@ -3,16 +3,22 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './components/login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {ToolbarComponent} from './components/toolbar/toolbar.component';
 
 
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, ToolbarComponent ],
+  exports: [
+    ToolbarComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class SharedModule { }
